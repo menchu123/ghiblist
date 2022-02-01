@@ -38,8 +38,12 @@ const MovieCard = () => {
 
   return (
     <li className="movie">
-      <section className="movie__poster">
-        <img src={testMovie.image} alt={testMovie.title} />
+      <section className="movie__image">
+        <img
+          className="movie__poster"
+          src={testMovie.image}
+          alt={testMovie.title}
+        />
       </section>
       <section className="movie__info">
         <h3 className="movie__title">{testMovie.title}</h3>
