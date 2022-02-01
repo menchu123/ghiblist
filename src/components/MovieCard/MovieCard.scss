@@ -3,4 +3,17 @@
   &__poster {
     height: 300px;
   }
+  &__data {
+    display: flex;
+    font-size: 14px;
+    width: 200px;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin-top: 5px;
+    font-style: italic;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
