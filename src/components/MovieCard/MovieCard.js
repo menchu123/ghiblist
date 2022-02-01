@@ -4,7 +4,12 @@ const MovieCard = ({ movie }) => {
   return (
     <li className="movie">
       <section className="movie__image">
-        <img className="movie__poster" src={movie.image} alt={movie.title} />
+        <img
+          className="movie__poster"
+          src={movie.image}
+          alt={`${movie.title} movie poster`}
+          height="300"
+        />
       </section>
       <section className="movie__info">
         <h3 className="movie__title">{movie.title}</h3>
