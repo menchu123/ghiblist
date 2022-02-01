@@ -1,3 +1,5 @@
+import "./MovieCard.scss";
+
 const MovieCard = () => {
   const testMovie = {
     id: "2baf70d1-42bb-4437-b551-e5fed5a87abe",
@@ -35,7 +37,7 @@ const MovieCard = () => {
   };
 
   return (
-    <>
+    <li className="movie">
       <section className="movie__poster">
         <img src={testMovie.image} alt={testMovie.title} />
       </section>
@@ -47,7 +49,7 @@ const MovieCard = () => {
           <p className="movie__score">{testMovie.rt_score}%</p>
         </div>
       </section>
-    </>
+    </li>
   );
 };
 

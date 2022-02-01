@@ -1,10 +1,12 @@
 import MovieCard from "./components/MovieCard/MovieCard";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <MovieCard />
+      <ul className="movie-list">
+        <MovieCard />
+      </ul>
     </div>
   );
 }
