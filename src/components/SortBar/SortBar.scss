@@ -1,0 +1,18 @@
+.sort-bar {
+  font-size: 14px;
+  font-weight: 500;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  &__buttons {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    input[type="radio"] {
+      display: none;
+    }
+    input[type="radio"]:checked + .sort-bar__label {
+      text-decoration: underline;
+    }
+  }
+}
