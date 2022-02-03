@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import ReactTestRenderer from "react-test-renderer";
 import MovieCard from "./MovieCard";
 
 describe("Given a MovieCard component", () => {
@@ -21,6 +22,21 @@ describe("Given a MovieCard component", () => {
 
       expect(movieCard).toBeInTheDocument();
       expect(movieTitle.textContent).toBe(expectedName);
+    });
+  });
+  describe("When it is passed a movie object", () => {
+    test("Then it should render a card matching the snapshot", () => {
+      const movie = {
+        title: "Spirited Away",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+        running_time: "124",
+        rt_score: "95",
+      };
+
+      const movieCard = ReactTestRenderer.create(<MovieCard movie={movie} />);
+      expect(movieCard.toJSON()).toMatchSnapshot();
     });
   });
 });
