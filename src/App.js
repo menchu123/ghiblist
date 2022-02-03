@@ -7,7 +7,7 @@ import { useState } from "react/cjs/react.development";
 
 function App() {
   const { status, data } = useMovies();
-  const [order, setOrder] = useState("release_date");
+  const [order, setOrder] = useState("title");
 
   return (
     <div className="App">
