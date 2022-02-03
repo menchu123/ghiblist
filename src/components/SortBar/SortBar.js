@@ -14,20 +14,6 @@ const SortBar = ({ setOrder, order }) => {
           <input
             type="radio"
             name="sortby"
-            value="release_date"
-            id="release_date"
-            className="sort-bar__input"
-            checked={order === "release_date"}
-            onChange={onChangeOrder}
-          />
-          <label htmlFor="release_date" className="sort-bar__label">
-            Year
-          </label>
-        </div>
-        <div className="sort-bar__button">
-          <input
-            type="radio"
-            name="sortby"
             value="title"
             id="title"
             className="sort-bar__input"
@@ -42,14 +28,14 @@ const SortBar = ({ setOrder, order }) => {
           <input
             type="radio"
             name="sortby"
-            value="rt_score"
-            id="rt_score"
+            value="release_date"
+            id="release_date"
             className="sort-bar__input"
-            checked={order === "rt_score"}
+            checked={order === "release_date"}
             onChange={onChangeOrder}
           />
-          <label htmlFor="rt_score" className="sort-bar__label">
-            Rating
+          <label htmlFor="release_date" className="sort-bar__label">
+            Year
           </label>
         </div>
         <div className="sort-bar__button">
@@ -64,6 +50,20 @@ const SortBar = ({ setOrder, order }) => {
           />
           <label htmlFor="running_time" className="sort-bar__label">
             Runtime
+          </label>
+        </div>
+        <div className="sort-bar__button">
+          <input
+            type="radio"
+            name="sortby"
+            value="rt_score"
+            id="rt_score"
+            className="sort-bar__input"
+            checked={order === "rt_score"}
+            onChange={onChangeOrder}
+          />
+          <label htmlFor="rt_score" className="sort-bar__label">
+            Rating
           </label>
         </div>
       </div>
