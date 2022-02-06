@@ -3,15 +3,24 @@ import { useState } from "react/cjs/react.development";
 import useMovies from "../../hooks/useMovies";
 import SortBar from "../SortBar/SortBar";
 import MovieCard from "../MovieCard/MovieCard";
+import Filter from "../Filter/Filter";
 
 const MovieList = () => {
-  const { status, data } = useMovies();
   const [order, setOrder] = useState("title");
+  const [filterOptions, setFilterOptions] = useState({});
+  const { status, data } = useMovies(filterOptions);
+
   return (
     <>
+      <Filter
+        setFilterOptions={setFilterOptions}
+        filterOptions={filterOptions}
+      />
       <SortBar setOrder={setOrder} order={order} />
       <ul className="movie-list">
-        {status !== "loading" ? (
+        {status === "loading" ? (
+          <div>Loading...</div>
+        ) : data.length ? (
           data
             .sort(
               order === "title"
@@ -23,7 +32,7 @@ const MovieList = () => {
             )
             .map((movie) => <MovieCard movie={movie} key={movie.id} />)
         ) : (
-          <div>Loading...</div>
+          <div>No results</div>
         )}
       </ul>
     </>
