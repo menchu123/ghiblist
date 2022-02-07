@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  cursor: default;
   &__buttons {
     width: 250px;
     display: flex;
@@ -15,5 +16,9 @@
     input[type="radio"]:checked + .sort-bar__label {
       text-decoration: underline;
     }
+  }
+  &__label:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }

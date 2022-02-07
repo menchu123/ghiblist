@@ -11,9 +11,18 @@
     padding-right: 25px;
     margin-top: 5px;
     font-style: italic;
+    border-bottom: 1px solid transparent;
   }
   &__title {
     font-size: 16px;
     font-weight: 700;
+    border-bottom: 1px solid transparent;
+  }
+  &:hover {
+    h3,
+    .movie__data {
+      border-bottom: 1px solid #3f37c9;
+    }
+    cursor: pointer;
   }
 }
