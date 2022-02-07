@@ -1,0 +1,32 @@
+.filter {
+  width: 240px;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #3f37c9;
+  color: #fff;
+  margin: 28px;
+  padding: 20px;
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  &__box {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin-bottom: 10px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  &__type {
+    display: flex;
+    justify-content: space-between;
+  }
+  select {
+    width: 110px;
+  }
+}
