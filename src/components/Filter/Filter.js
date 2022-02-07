@@ -1,16 +1,16 @@
-const Filter = ({ setFilterOptions, filterOptions }) => {
+import "./Filter.scss";
+
+const Filter = ({ addToFilter }) => {
   return (
     <>
-      <div className="filter">
+      <section className="filter">
         <p className="filter__title">Filter by:</p>
         <div className="filter__type">
           <label className="filter__label" htmlFor="year-filter">
             Year:
           </label>
           <select
-            onChange={(event) =>
-              setFilterOptions({ ...filterOptions, year: event.target.value })
-            }
+            onChange={(event) => addToFilter(event, "year")}
             className="filter__box"
             name="year-filter"
             id="year-filter"
@@ -21,8 +21,11 @@ const Filter = ({ setFilterOptions, filterOptions }) => {
             <option className="filter__option" value="2020-3000">
               After 2020
             </option>
-            <option className="filter__option" value="2000-2020">
-              2000-2020
+            <option className="filter__option" value="2010-2020">
+              2010-2020
+            </option>
+            <option className="filter__option" value="2000-2010">
+              2000-2010
             </option>
             <option className="filter__option" value="1990-2000">
               1990-2000
@@ -37,12 +40,7 @@ const Filter = ({ setFilterOptions, filterOptions }) => {
             Runtime:
           </label>
           <select
-            onChange={(event) =>
-              setFilterOptions({
-                ...filterOptions,
-                runtime: event.target.value,
-              })
-            }
+            onChange={(event) => addToFilter(event, "runtime")}
             className="filter__box"
             name="runtime-filter"
             id="runtime-filter"
@@ -66,12 +64,7 @@ const Filter = ({ setFilterOptions, filterOptions }) => {
             Rating:
           </label>
           <select
-            onChange={(event) =>
-              setFilterOptions({
-                ...filterOptions,
-                rating: event.target.value,
-              })
-            }
+            onChange={(event) => addToFilter(event, "rating")}
             className="filter__box"
             name="rating-filter"
             id="rating-filter"
@@ -93,7 +86,7 @@ const Filter = ({ setFilterOptions, filterOptions }) => {
             </option>
           </select>
         </div>
-      </div>
+      </section>
     </>
   );
 };
