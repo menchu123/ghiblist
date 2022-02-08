@@ -7,6 +7,21 @@ const getMovies = async (filter) => {
   return filterMovies(data, filter);
 };
 
-export default function useMovies(filter) {
+const getMovieById = async (movieId) => {
+  const { data } = await axios.get(
+    `https://ghibliapi.herokuapp.com/films/${movieId}`
+  );
+  return data;
+};
+
+export function useMovies(filter) {
   return useQuery(["movies", filter], () => getMovies(filter));
+}
+
+export function useMovie(movieId) {
+  return useQuery("movie", () => getMovieById(movieId), {
+    refetchOnMount: "always",
+    notifyOnNetworkStatusChange: true,
+    keepPreviousData: false,
+  });
 }
