@@ -1,6 +1,6 @@
 import "./MovieList.scss";
 import { useState } from "react/cjs/react.development";
-import useMovies from "../../hooks/useMovies";
+import { useMovies } from "../../hooks/useMovies";
 import SortBar from "../SortBar/SortBar";
 import MovieCard from "../MovieCard/MovieCard";
 import Filter from "../Filter/Filter";
