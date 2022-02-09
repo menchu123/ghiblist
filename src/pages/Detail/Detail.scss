@@ -1,0 +1,48 @@
+@import "../../styles-assets/extends";
+
+.movie-detail {
+  width: 573px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #3f37c9;
+  &__image {
+    border: 1px solid #3f37c9;
+    -webkit-box-shadow: 0px 0px 0px 0px #3f37c9;
+    box-shadow: 0px 0px 0px 0px #3f37c9;
+  }
+  &__info {
+    margin-top: 10px;
+  }
+  &__data {
+    display: flex;
+    font-size: 14px;
+    width: 200px;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin: 5px;
+    font-style: italic;
+  }
+  &__title {
+    margin-bottom: 5px;
+  }
+  &__director {
+    margin-bottom: 30px;
+  }
+}
+
+.loader {
+  @extend %loader;
+  margin: 1000px auto;
+}
+
+.go-back {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-style: 16px;
+  color: inherit;
+  position: absolute;
+  top: 25px;
+  left: calc(100vw / 2 - 290px);
+  cursor: pointer;
+}
