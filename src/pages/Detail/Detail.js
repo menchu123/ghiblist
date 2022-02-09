@@ -1,13 +1,20 @@
-import { useParams } from "react-router-dom";
+import "./Detail.scss";
+import { useNavigate, useParams } from "react-router-dom";
 import { useMovie } from "../../hooks/useMovies";
 
 const Detail = () => {
   const { movieId } = useParams();
   const { data, status, isFetchedAfterMount } = useMovie(movieId);
+  const navigate = useNavigate();
 
   return (
     <>
-      {(status === "loading" || !isFetchedAfterMount) && <div>Loading...</div>}
+      <button onClick={() => navigate(-1)} className="go-back">
+        go back
+      </button>
+      {(status === "loading" || !isFetchedAfterMount) && (
+        <div className="loader">Loading...</div>
+      )}
       {isFetchedAfterMount && status === "success" && (
         <>
           <section className="movie-detail">
