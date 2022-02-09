@@ -40,7 +40,10 @@ const MovieList = () => {
               ))}
           </ul>
         ) : (
-          <div>No results</div>
+          <div className="no-results">
+            No results <br />
+            (╯°□°）╯︵ ┻━┻
+          </div>
         )}
       </div>
     </section>
