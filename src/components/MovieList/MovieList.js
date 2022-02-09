@@ -21,11 +21,12 @@ const MovieList = () => {
       </div>
       <div className="movies__container">
         <SortBar setOrder={setOrder} order={order} />
-        <ul className="movie-list">
-          {status === "loading" ? (
-            <div>Loading...</div>
-          ) : data.length ? (
-            data
+
+        {status === "loading" ? (
+          <div className="loader">Loading...</div>
+        ) : data.length ? (
+          <ul className="movie-list">
+            {data
               .sort(
                 order === "title"
                   ? (a, b) =>
@@ -34,11 +35,16 @@ const MovieList = () => {
                       })
                   : (a, b) => b[order] - a[order]
               )
-              .map((movie) => <MovieCard movie={movie} key={movie.id} />)
-          ) : (
-            <div>No results</div>
-          )}
-        </ul>
+              .map((movie) => (
+                <MovieCard movie={movie} key={movie.id} />
+              ))}
+          </ul>
+        ) : (
+          <div className="no-results">
+            No results <br />
+            (╯°□°）╯︵ ┻━┻
+          </div>
+        )}
       </div>
     </section>
   );
