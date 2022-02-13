@@ -10,7 +10,7 @@ const Detail = () => {
   return (
     <>
       <button onClick={() => navigate(-1)} className="go-back">
-        go back
+        {"<"}
       </button>
       {(status === "loading" || !isFetchedAfterMount) && (
         <div className="loader">Loading...</div>
