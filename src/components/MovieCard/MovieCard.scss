@@ -1,5 +1,6 @@
 .movie {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 200px;
   &__poster {
     height: 300px;
   }
