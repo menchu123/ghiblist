@@ -22,9 +22,8 @@ const MovieList = () => {
       <div className="movies__container">
         <SortBar setOrder={setOrder} order={order} />
 
-        {status === "loading" ? (
-          <div className="loader">Loading...</div>
-        ) : data.length ? (
+        {status === "loading" && <div className="loader">Loading...</div>}
+        {status === "success" && data.length ? (
           <ul className="movie-list">
             {data
               .sort(

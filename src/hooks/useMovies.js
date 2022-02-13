@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import axios from "axios";
-import filterMovies from "./filters";
+import filterMovies from "./filterMovies";
 
 const getMovies = async (filter) => {
   const { data } = await axios.get("https://ghibliapi.herokuapp.com/films");
