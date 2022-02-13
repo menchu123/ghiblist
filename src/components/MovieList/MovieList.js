@@ -1,5 +1,5 @@
 import "./MovieList.scss";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { useMovies } from "../../hooks/useMovies";
 import SortBar from "../SortBar/SortBar";
 import MovieCard from "../MovieCard/MovieCard";

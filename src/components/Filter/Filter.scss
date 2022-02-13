@@ -31,3 +31,9 @@
     width: 110px;
   }
 }
+
+@media only screen and (max-width: 740px) {
+  .filter {
+    display: none;
+  }
+}
