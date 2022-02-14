@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import ReactTestRenderer from "react-test-renderer";
-import MovieCard from "./MovieCard";
+import DetailCard from "./DetailCard";
 
-describe("Given a MovieCard component", () => {
+describe("Given a DetailCard component", () => {
   describe("When it is passed a movie object with the title 'Spirited Away'", () => {
     test("Then it should render a card with the movie's title", () => {
       const expectedName = "Spirited Away";
@@ -18,14 +18,12 @@ describe("Given a MovieCard component", () => {
 
       render(
         <BrowserRouter>
-          <MovieCard movie={movie} />
+          <DetailCard movie={movie} />
         </BrowserRouter>
       );
 
-      const movieCard = screen.getByRole("listitem");
       const movieTitle = screen.getByRole("heading");
 
-      expect(movieCard).toBeInTheDocument();
       expect(movieTitle.textContent).toBe(expectedName);
     });
   });
@@ -40,12 +38,12 @@ describe("Given a MovieCard component", () => {
         rt_score: "95",
       };
 
-      const movieCard = ReactTestRenderer.create(
+      const detailCard = ReactTestRenderer.create(
         <BrowserRouter>
-          <MovieCard movie={movie} />
+          <DetailCard movie={movie} />
         </BrowserRouter>
       );
-      expect(movieCard.toJSON()).toMatchSnapshot();
+      expect(detailCard.toJSON()).toMatchSnapshot();
     });
   });
 });
