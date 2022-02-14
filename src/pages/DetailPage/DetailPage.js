@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import DetailCard from "../../components/DetailCard/DetailCard";
 import { useMovie } from "../../hooks/useMovies";
 
-const Detail = () => {
+const DetailPage = () => {
   const navigate = useNavigate();
   const { movieId } = useParams();
   const { data, status, isFetchedAfterMount } = useMovie(movieId);
@@ -24,4 +24,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailPage;
