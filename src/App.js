@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Detail from "./pages/Detail/Detail";
+import DetailPage from "./pages/DetailPage/DetailPage";
 import Home from "./pages/Home/Home";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       </h1>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path=":movieId" element={<Detail />} />
+        <Route path=":movieId" element={<DetailPage />} />
       </Routes>
       <footer className="footer">© 2022 - Menchu for Beezy</footer>
     </div>
