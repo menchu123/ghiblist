@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import SortBar from "./SortBar";
 
 describe("Given a SortBar component", () => {
@@ -64,6 +65,19 @@ describe("Given a SortBar component", () => {
       const runtimeInput = screen.getByRole("radio", { name: "Runtime" });
 
       expect(runtimeInput).toBeChecked();
+    });
+  });
+  describe("When the user clicks on 'Runtime'", () => {
+    test("Then the function onChangeOrder should be called", () => {
+      const order = "title";
+      const setOrder = jest.fn();
+
+      render(<SortBar order={order} setOrder={setOrder} />);
+
+      const runtimeInput = screen.getByRole("radio", { name: "Runtime" });
+      userEvent.click(runtimeInput);
+
+      expect(setOrder).toHaveBeenCalled();
     });
   });
 });
