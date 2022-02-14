@@ -22,6 +22,9 @@ const MovieList = () => {
       <div className="movies__container">
         <SortBar setOrder={setOrder} order={order} />
 
+        {status === "error" && (
+          <div className="error">Could not find movies</div>
+        )}
         {status === "loading" && <div className="loader">Loading...</div>}
         {status === "success" &&
           (data.length ? (
