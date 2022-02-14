@@ -1,0 +1,22 @@
+.detail-page {
+  min-height: calc(100vh - 60px - 60px);
+}
+
+.go-back {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 500;
+  color: inherit;
+  position: absolute;
+  top: 18px;
+  left: calc(100vw / 2 - 290px);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 620px) {
+  .go-back {
+    left: 15px;
+  }
+}

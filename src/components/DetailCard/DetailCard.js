@@ -1,17 +1,13 @@
-import "./Detail.scss";
-import { useNavigate, useParams } from "react-router-dom";
+import "./DetailCard.scss";
+import { useParams } from "react-router-dom";
 import { useMovie } from "../../hooks/useMovies";
 
-const Detail = () => {
+const DetailCard = () => {
   const { movieId } = useParams();
   const { data, status, isFetchedAfterMount } = useMovie(movieId);
-  const navigate = useNavigate();
 
   return (
     <>
-      <button onClick={() => navigate(-1)} className="go-back">
-        {"<"}
-      </button>
       {(status === "loading" || !isFetchedAfterMount) && (
         <div className="loader">Loading...</div>
       )}
@@ -43,4 +39,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailCard;
