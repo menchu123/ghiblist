@@ -87,7 +87,7 @@ describe("Given a Filter component", () => {
       );
 
       resizeWindow(500, 800);
-      const openFilter = screen.getByRole("button");
+      const openFilter = screen.getAllByRole("button")[0];
       userEvent.click(openFilter);
 
       expect(openFilter).toHaveClass("open-filter");
