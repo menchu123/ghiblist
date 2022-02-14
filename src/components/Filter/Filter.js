@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { useState, useRef } from "react";
 import "./Filter.scss";
 
@@ -22,11 +20,7 @@ const Filter = ({ addToFilter, removeAllFilters }) => {
         className={`open-filter${isOpen ? " open-button" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? (
-          <FontAwesomeIcon icon={faXmark} />
-        ) : (
-          <FontAwesomeIcon icon={faBarsStaggered} />
-        )}
+        {isOpen ? "x" : "Filter >"}
       </button>
       <section className={`filter${isOpen ? " filter--visible" : ""}`}>
         <section
