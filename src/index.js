@@ -1,6 +1,7 @@
+import "./index.scss";
+import "@fontsource/montserrat";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "react-query";
