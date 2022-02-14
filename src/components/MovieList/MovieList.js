@@ -23,27 +23,28 @@ const MovieList = () => {
         <SortBar setOrder={setOrder} order={order} />
 
         {status === "loading" && <div className="loader">Loading...</div>}
-        {status === "success" && data.length ? (
-          <ul className="movie-list">
-            {data
-              .sort(
-                order === "title"
-                  ? (a, b) =>
-                      a[order].localeCompare(b[order], "en", {
-                        ignorePunctuation: true,
-                      })
-                  : (a, b) => b[order] - a[order]
-              )
-              .map((movie) => (
-                <MovieCard movie={movie} key={movie.id} />
-              ))}
-          </ul>
-        ) : (
-          <div className="no-results">
-            No results <br />
-            (╯°□°）╯︵ ┻━┻
-          </div>
-        )}
+        {status === "success" &&
+          (data.length ? (
+            <ul className="movie-list">
+              {data
+                .sort(
+                  order === "title"
+                    ? (a, b) =>
+                        a[order].localeCompare(b[order], "en", {
+                          ignorePunctuation: true,
+                        })
+                    : (a, b) => b[order] - a[order]
+                )
+                .map((movie) => (
+                  <MovieCard movie={movie} key={movie.id} />
+                ))}
+            </ul>
+          ) : (
+            <div className="no-results">
+              No results <br />
+              (╯°□°）╯︵ ┻━┻)
+            </div>
+          ))}
       </div>
     </section>
   );

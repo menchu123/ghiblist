@@ -3,14 +3,12 @@ import axios from "axios";
 import filterMovies from "./filterMovies";
 
 const getMovies = async (filter) => {
-  const { data } = await axios.get("https://ghibliapi.herokuapp.com/films");
+  const { data } = await axios.get(process.env.REACT_APP_URL);
   return filterMovies(data, filter);
 };
 
 const getMovieById = async (movieId) => {
-  const { data } = await axios.get(
-    `https://ghibliapi.herokuapp.com/films/${movieId}`
-  );
+  const { data } = await axios.get(`${process.env.REACT_APP_URL}/${movieId}`);
   return data;
 };
 
