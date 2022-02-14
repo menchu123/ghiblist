@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path=":movieId" element={<Detail />} />
       </Routes>
+      <footer className="footer">© 2022 - Menchu for Beezy</footer>
     </div>
   );
 }
