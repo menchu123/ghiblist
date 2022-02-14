@@ -32,7 +32,8 @@
   }
 }
 
-.open-filter {
+.open-filter,
+.closing-space {
   display: none;
 }
 
@@ -59,8 +60,20 @@
     }
     transition: right ease-in 200ms;
   }
+  .closing-space {
+    display: none;
+    &--visible {
+      display: block;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      background-color: transparent;
+    }
+  }
 
-  .filter-visible {
+  .filter--visible {
     right: 0;
   }
 
