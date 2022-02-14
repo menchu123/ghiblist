@@ -13,13 +13,15 @@ const getMovieById = async (movieId) => {
 };
 
 export function useMovies(filter) {
-  return useQuery(["movies", filter], () => getMovies(filter));
+  return useQuery(["movies", filter], () => getMovies(filter), {
+    retry: false,
+  });
 }
 
 export function useMovie(movieId) {
   return useQuery("movie", () => getMovieById(movieId), {
-    refetchOnMount: "always",
     notifyOnNetworkStatusChange: true,
     keepPreviousData: false,
+    retry: false,
   });
 }

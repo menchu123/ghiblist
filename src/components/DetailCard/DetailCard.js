@@ -8,6 +8,7 @@ const DetailCard = () => {
 
   return (
     <>
+      {status === "error" && <div className="error">Could not find movie</div>}
       {(status === "loading" || !isFetchedAfterMount) && (
         <div className="loader">Loading...</div>
       )}
