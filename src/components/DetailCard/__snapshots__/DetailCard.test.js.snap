@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a DetailCard component When it is passed a movie object Then it should render a card matching the snapshot 1`] = `
+<section
+  className="movie-detail"
+>
+  <img
+    alt="Spirited Away banner"
+    className="movie-detail__image"
+    height="300"
+  />
+  <section
+    className="movie-detail__info"
+  >
+    <div
+      className="movie-detail__data"
+    >
+      <p
+        className="movie-detail__year"
+      >
+        1986
+      </p>
+      <p
+        className="movie-detail__runtime"
+      >
+        124
+        min
+      </p>
+      <p
+        className="movie-detail__score"
+      >
+        95
+        %
+      </p>
+    </div>
+  </section>
+  <h2
+    className="movie-detail__title"
+  >
+    Spirited Away
+  </h2>
+  <p
+    className="movie-detail__director"
+  >
+    Hayao Miyazaki
+     · 
+    Isao Takahata
+  </p>
+  <p
+    className="movie-detail__description"
+  />
+</section>
+`;

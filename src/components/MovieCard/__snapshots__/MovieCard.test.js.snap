@@ -1,47 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Given a MovieCard component When it is passed a movie object Then it should render a card matching the snapshot 1`] = `
-<li
-  className="movie"
+<a
+  href="/undefined"
+  onClick={[Function]}
 >
-  <section
-    className="movie__image"
+  <li
+    className="movie"
   >
-    <img
-      alt="Spirited Away movie poster"
-      className="movie__poster"
-      height="300"
-    />
-  </section>
-  <section
-    className="movie__info"
-  >
-    <h3
-      className="movie__title"
+    <section
+      className="movie__image"
     >
-      Spirited Away
-    </h3>
-    <div
-      className="movie__data"
+      <img
+        alt="Spirited Away movie poster"
+        className="movie__poster"
+        height="300"
+      />
+    </section>
+    <section
+      className="movie__info"
     >
-      <p
-        className="movie__year"
+      <h3
+        className="movie__title"
       >
-        1986
-      </p>
-      <p
-        className="movie__runtime"
+        Spirited Away
+      </h3>
+      <div
+        className="movie__data"
       >
-        124
-        min
-      </p>
-      <p
-        className="movie__score"
-      >
-        95
-        %
-      </p>
-    </div>
-  </section>
-</li>
+        <p
+          className="movie__year"
+        >
+          1986
+        </p>
+        <p
+          className="movie__runtime"
+        >
+          124
+          min
+        </p>
+        <p
+          className="movie__score"
+        >
+          95
+          %
+        </p>
+      </div>
+    </section>
+  </li>
+</a>
 `;
