@@ -18,6 +18,18 @@ const MovieList = () => {
     setFilterOptions({});
   };
 
+  const sortMovies = (movies) => {
+    movies.sort(
+      order === "title"
+        ? (a, b) =>
+            a[order].localeCompare(b[order], "en", {
+              ignorePunctuation: true,
+            })
+        : (a, b) => b[order] - a[order]
+    );
+    return movies;
+  };
+
   return (
     <section className="movies">
       <div className="movies__sidebar">
@@ -33,18 +45,9 @@ const MovieList = () => {
         {status === "success" &&
           (data.length ? (
             <ul className="movie-list">
-              {data
-                .sort(
-                  order === "title"
-                    ? (a, b) =>
-                        a[order].localeCompare(b[order], "en", {
-                          ignorePunctuation: true,
-                        })
-                    : (a, b) => b[order] - a[order]
-                )
-                .map((movie) => (
-                  <MovieCard movie={movie} key={movie.id} />
-                ))}
+              {sortMovies(data).map((movie) => (
+                <MovieCard movie={movie} key={movie.id} />
+              ))}
             </ul>
           ) : (
             <div className="no-results">
