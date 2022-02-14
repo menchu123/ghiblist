@@ -32,8 +32,53 @@
   }
 }
 
+.open-filter {
+  display: none;
+}
+
 @media only screen and (max-width: 740px) {
   .filter {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+    font-size: 20px;
+    background-color: rgba(63, 55, 201, 0.95);
+    &__type {
+      flex-direction: column;
+    }
+    &__box {
+      margin: 20px 0;
+    }
+    select {
+      width: 140px;
+    }
+    transition: right ease-in 200ms;
+  }
+
+  .filter-visible {
+    right: 0;
+  }
+
+  .open-filter {
+    display: block;
+    position: fixed;
+    top: 12px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: #3f37c9;
+    font-size: 25px;
+    font-weight: 400;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .open-button {
+    color: #fff;
+    font-size: 30px;
   }
 }
