@@ -18,7 +18,11 @@ const Filter = ({ addToFilter }) => {
           <FontAwesomeIcon icon={faBarsStaggered} />
         )}
       </button>
-      <section className={`filter${isOpen ? " filter-visible" : ""}`}>
+      <section className={`filter${isOpen ? " filter--visible" : ""}`}>
+        <section
+          className={`closing-space${isOpen ? " closing-space--visible" : ""}`}
+          onClick={() => setIsOpen(false)}
+        ></section>
         <p className="filter__title">Filter by:</p>
         <div className="filter__type">
           <label className="filter__label" htmlFor="year-filter">
