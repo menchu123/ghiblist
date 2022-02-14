@@ -1,3 +1,5 @@
+@use "./styles-assets/variables";
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +7,7 @@
 body {
   margin: 0;
   font-family: Montserrat, sans-serif;
-  color: #3f37c9;
+  color: variables.$primary-color;
   width: 100vw;
   height: 100vh;
 }

@@ -1,3 +1,5 @@
+@use "../../styles-assets/variables";
+
 .movie {
   margin: 0 auto;
   max-width: 200px;
@@ -22,7 +24,7 @@
   &:hover {
     h3,
     .movie__data {
-      border-bottom: 1px solid #3f37c9;
+      border-bottom: 1px solid variables.$primary-color;
     }
     cursor: pointer;
   }

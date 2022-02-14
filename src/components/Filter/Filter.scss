@@ -1,8 +1,10 @@
+@use "../../styles-assets/variables";
+
 .filter {
   width: 240px;
   font-size: 14px;
   font-weight: 400;
-  background-color: #3f37c9;
+  background-color: variables.$primary-color;
   color: #fff;
   margin: 28px;
   padding: 20px;
@@ -41,7 +43,7 @@
   background-color: #fff;
   border: none;
   font-size: inherit;
-  color: #3f37c9;
+  color: variables.$primary-color;
   font-family: inherit;
   margin-top: 10px;
   cursor: pointer;
@@ -94,7 +96,7 @@
     right: 20px;
     background-color: transparent;
     border: none;
-    color: #3f37c9;
+    color: variables.$primary-color;
     font-size: 25px;
     font-weight: 400;
     cursor: pointer;
