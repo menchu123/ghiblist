@@ -45,5 +45,13 @@
   },
   "devDependencies": {
     "sass": "^1.49.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js",
+      "!src/reportWebVitals.js",
+      "!src/index.js"
+    ]
   }
 }
