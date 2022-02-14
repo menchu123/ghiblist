@@ -1,10 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Filter.scss";
 
-const Filter = ({ addToFilter }) => {
+const Filter = ({ addToFilter, removeAllFilters }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const yearsFilter = useRef();
+  const ratingsFilter = useRef();
+  const runtimeFilter = useRef();
+
+  const removeFilters = () => {
+    removeAllFilters();
+    yearsFilter.current.value = "";
+    ratingsFilter.current.value = "";
+    runtimeFilter.current.value = "";
+  };
 
   return (
     <>
@@ -33,6 +43,7 @@ const Filter = ({ addToFilter }) => {
             className="filter__box"
             name="year-filter"
             id="year-filter"
+            ref={yearsFilter}
           >
             <option className="filter__option" value="">
               All
@@ -63,6 +74,7 @@ const Filter = ({ addToFilter }) => {
             className="filter__box"
             name="runtime-filter"
             id="runtime-filter"
+            ref={runtimeFilter}
           >
             <option className="filter__option" value="">
               All
@@ -87,6 +99,7 @@ const Filter = ({ addToFilter }) => {
             className="filter__box"
             name="rating-filter"
             id="rating-filter"
+            ref={ratingsFilter}
           >
             <option className="filter__option" value="">
               All
@@ -105,6 +118,9 @@ const Filter = ({ addToFilter }) => {
             </option>
           </select>
         </div>
+        <button className="remove-filters" onClick={removeFilters}>
+          Remove filters
+        </button>
       </section>
     </>
   );
