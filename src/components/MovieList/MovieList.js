@@ -14,10 +14,14 @@ const MovieList = () => {
     setFilterOptions({ ...filterOptions, [filterType]: event.target.value });
   };
 
+  const removeAllFilters = () => {
+    setFilterOptions({});
+  };
+
   return (
     <section className="movies">
       <div className="movies__sidebar">
-        <Filter addToFilter={addToFilter} />
+        <Filter addToFilter={addToFilter} removeAllFilters={removeAllFilters} />
       </div>
       <div className="movies__container">
         <SortBar setOrder={setOrder} order={order} />

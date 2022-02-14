@@ -87,10 +87,33 @@ describe("Given a Filter component", () => {
       );
 
       resizeWindow(500, 800);
-      const openFilter = screen.getByRole("button");
+      const openFilter = screen.getAllByRole("button")[0];
       userEvent.click(openFilter);
 
       expect(openFilter).toHaveClass("open-filter");
+    });
+  });
+  describe("When the user clicks on Remove filters", () => {
+    test("Then it should add the class 'open-filter' to the button", () => {
+      const addToFilter = jest.fn();
+      const removeAllFilters = jest.fn();
+
+      render(
+        <BrowserRouter>
+          <Filter
+            addToFilter={addToFilter}
+            removeAllFilters={removeAllFilters}
+          />
+        </BrowserRouter>
+      );
+
+      resizeWindow(500, 800);
+      const removeFilters = screen.getByRole("button", {
+        name: "Remove filters",
+      });
+      userEvent.click(removeFilters);
+
+      expect(removeAllFilters).toHaveBeenCalled();
     });
   });
 });

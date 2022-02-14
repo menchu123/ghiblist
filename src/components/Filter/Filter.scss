@@ -37,6 +37,16 @@
   display: none;
 }
 
+.remove-filters {
+  background-color: #fff;
+  border: none;
+  font-size: inherit;
+  color: #3f37c9;
+  font-family: inherit;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 740px) {
   .filter {
     display: block;
