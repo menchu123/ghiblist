@@ -1,7 +1,7 @@
 import "./DetailPage.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import DetailCard from "../../components/DetailCard/DetailCard";
-import { useMovie } from "../../hooks/useMovies";
+import useMovie from "../../hooks/useMovie";
 
 const DetailPage = () => {
   const navigate = useNavigate();
